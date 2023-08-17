@@ -59,7 +59,7 @@ export const theme = {
 };
 
 export function Theme({ children }) {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }
 
 Theme.propTypes = {
