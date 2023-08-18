@@ -37,7 +37,8 @@ export const theme = {
     secondary: "#FE8C00",
     text: "#fff",
     metalDark: "#7f8c8d",
-    container: "2d2d2d",
+    container: "#2d2d2d",
+    background: "#191919"
   },
   fontFamily: {
     heading: ["IBM Plex Sans", "sans-serif"].join(","),
@@ -56,7 +57,18 @@ export const theme = {
     "4xl": rem(40),
     "5xl": rem(64),
   },
+
+  breakpoints: {
+    xs: "0",
+    md: "768px",
+    sm: "576px",
+    lg: "992px",
+    xl: "1200px",
+    xxl: "1400px",
+  },
 };
+
+
 
 export function Theme({ children }) {
   return <ThemeProvider theme={theme}>{children}</ThemeProvider>

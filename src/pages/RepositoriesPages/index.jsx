@@ -1,8 +1,17 @@
 import React from 'react'
 
+import { Container, SideBar, Main } from './styles'
+
 function RepositoriesPages() {
   return (
-    <h1>Repositories Page</h1>
+    <Container>
+      <SideBar>
+        SideBar
+      </SideBar>
+      <Main>
+        Main
+      </Main>
+    </Container>
   )
 }
 
