@@ -51,6 +51,8 @@ export const theme = {
     md: rem(14),
     base: rem(16),
     lg: rem(18),
+    title: "1.3rem",
+    subtitle: "1.25rem",
     xl: rem(20),
     "2xl": rem(24),
     "3xl": rem(32),
