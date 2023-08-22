@@ -59,4 +59,9 @@ export const Data = styled.p`
   svg{
     margin-right: 10px;
   }
+
+  a{
+    text-decoration: none;
+    color: #64666B;
+  }
 `;
