@@ -24,19 +24,19 @@ function RepositoriesPages() {
 
   const repositories = [
     {
-      name: 'Repo 1', description: 'Descrição1', html_url: 'https://edufleury.github.io/Portifolio2.0/', language: 'HTML5'
+      id: '1', name: 'Repo 1', description: 'Descrição1', html_url: 'https://edufleury.github.io/Portifolio2.0/', language: 'HTML5'
     },
     {
-      name: 'Repo 2', description: 'Descrição2', html_url: 'https://edufleury.github.io/Portifolio2.0/', language: 'JavaScript'
+      id: '2',name: 'Repo 2', description: 'Descrição2', html_url: 'https://edufleury.github.io/Portifolio2.0/', language: 'JavaScript'
     },
     {
-      name: 'Repo 3', description: 'Descrição3', html_url: 'https://edufleury.github.io/Portifolio2.0/', language: 'SQL'
+      id: '3',name: 'Repo 3', description: 'Descrição3', html_url: 'https://edufleury.github.io/Portifolio2.0/', language: 'SQL'
     },
     {
-      name: 'Repo 4', description: 'Descrição4', html_url: 'https://edufleury.github.io/Portifolio2.0/', language: 'Java'
+      id: '4', name: 'Repo 4', description: 'Descrição4', html_url: 'https://edufleury.github.io/Portifolio2.0/', language: 'Java'
     },
     {
-      name: 'Repo 5', description: 'Descrição5', html_url: 'https://edufleury.github.io/Portifolio2.0/', language: 'Phyton'
+      id: '5',name: 'Repo 5', description: 'Descrição5', html_url: 'https://edufleury.github.io/Portifolio2.0/', language: 'Phyton'
     }
   ]
 
@@ -49,7 +49,7 @@ function RepositoriesPages() {
        <Filter languages={languages}/>
       </SideBar>
       <Main>
-        <Repositories/>
+        <Repositories repositories={repositories}/>
       </Main>
     </Container>
   )
