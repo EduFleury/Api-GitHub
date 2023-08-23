@@ -56,7 +56,7 @@ function RepositoriesPages() {
        <Filter languages={languages} currentLanguage={currentLanguage} onClick={onFilterClick}/>
       </SideBar>
       <Main>
-        <Repositories repositories={repositories}/>
+        <Repositories repositories={repositories} currentLanguage={currentLanguage}/>
       </Main>
     </Container>
   )

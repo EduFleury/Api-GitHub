@@ -20,4 +20,8 @@ export const langColors = {
  perl: '#39457E',
  haskell: '#5E5086',
  matlab: '#0076A8',
+ html: '#e67e22',
+ css: '#9b59b6',
+ scss: '#9b59b6',
+ vue: '#1abc9c',
 }
