@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import Profile from './Profile'
 import Filter from './Filter'
@@ -11,6 +11,8 @@ import {getLanguages} from '../../services/api'
 
 function RepositoriesPages() {
 
+  const [currentLanguage, setCurrentLanguage] = useState();
+
   const user ={
     login: "EduFleury",
     avatar_url: "https://avatars.githubusercontent.com/u/114586500?v=4",
@@ -22,6 +24,7 @@ function RepositoriesPages() {
     location: "Brazil, GO, Goiânia",
   }
 
+ // eslint-disable-next-line no-unused-vars
   const repositories = [
     {
       id: '1', name: 'Repo 1', description: 'Descrição1', html_url: 'https://edufleury.github.io/Portifolio2.0/', language: 'HTML5'
@@ -38,15 +41,19 @@ function RepositoriesPages() {
     {
       id: '5',name: 'Repo 5', description: 'Descrição5', html_url: 'https://edufleury.github.io/Portifolio2.0/', language: 'Phyton'
     }
-  ]
+  ];
 
   const languages = getLanguages(repositories);
+
+  const onFilterClick = (language) =>{
+    setCurrentLanguage(language);
+  };
 
   return (
     <Container>
       <SideBar>
        <Profile user={user}/>
-       <Filter languages={languages}/>
+       <Filter languages={languages} currentLanguage={currentLanguage} onClick={onFilterClick}/>
       </SideBar>
       <Main>
         <Repositories repositories={repositories}/>

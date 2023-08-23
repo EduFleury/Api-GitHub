@@ -14,12 +14,13 @@ export const Container = styled.div`
 }
 `;
 
+
 export const Selector = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: ${(props) => props.theme.colors.container};
-  color:  ${(props) => props.color};
+  color: ${(props) => props.color || props.theme.colors.text};
   width: 100%;
   min-height: 2rem;
   border: none;
@@ -29,18 +30,19 @@ export const Selector = styled.button`
   padding: 0 1rem;
 
   &:hover,
-  &.selector{
+  &.selected {
     background: ${(props) => props.color || props.theme.colors.light};
-    color: ${(props) => props.color? props.theme.colors.white : props.theme.colors.black};
+    color: ${(props) =>
+      props.color ? props.theme.colors.white : props.theme.colors.black};
     transform: translateX(5px) scale(1.02);
   }
 
-  @media screen and (max-width: ${(props) => props.theme.breakpoints.md}){
+  @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
     border-radius: 20px;
     &:hover,
-    &.selector{
-    transform: translateX(0) scale(1.02);
-  }
+    &.selected {
+      transform: translateX(0) scale(1.02);
+    }
   }
 `;
 
