@@ -3,6 +3,7 @@ import Proptypes from 'prop-types'
 import { Container, Selector, Cleaner} from './styles';
 
 function Filter({languages, currentLanguage, onClick}) {
+
   const selectors = languages.map(({ name, count, color }) => (
     <Selector
       key={name.toLowerCase()}
