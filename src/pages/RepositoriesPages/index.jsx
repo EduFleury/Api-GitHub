@@ -1,28 +1,41 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 import Profile from './Profile'
 import Filter from './Filter'
 import Repositories from '../Repositories'
 
-import { Container, SideBar, Main } from './styles'
+import { Container, SideBar, Main, Loading } from './styles'
 
-import {getLanguages} from '../../services/api'
+import {getUser, getLanguages} from '../../services/api'
 
 
 function RepositoriesPages() {
-
+  const [user, setUser] = useState();
   const [currentLanguage, setCurrentLanguage] = useState();
+  const [loading, setLoading] = useState(true);
 
-  const user ={
-    login: "EduFleury",
-    avatar_url: "https://avatars.githubusercontent.com/u/114586500?v=4",
-    followers: 0,
-    following: 0,
-    name: "Eduardo Pina Fleury Fortuna",
-    company: null,
-    blog: "https://edufleury.github.io/Portifolio2.0/",
-    location: "Brazil, GO, Goiânia",
-  }
+  useEffect(() => {
+    const loadData = async() => {
+      const [userResponse] = await Promise.all([
+        getUser('EduFleury'),
+      ]);
+      setUser(userResponse.data);
+      setLoading(false);
+    };
+
+    loadData();
+  }, []);
+
+  // const user ={
+  //   login: "EduFleury",
+  //   avatar_url: "https://avatars.githubusercontent.com/u/114586500?v=4",
+  //   followers: 0,
+  //   following: 0,
+  //   name: "Eduardo Pina Fleury Fortuna",
+  //   company: null,
+  //   blog: "https://edufleury.github.io/Portifolio2.0/",
+  //   location: "Brazil, GO, Goiânia",
+  // }
 
  // eslint-disable-next-line no-unused-vars
   const repositories = [
@@ -48,6 +61,10 @@ function RepositoriesPages() {
   const onFilterClick = (language) =>{
     setCurrentLanguage(language);
   };
+
+  if(loading){
+    return <Loading>Carregando dados da Aplicação...</Loading>;
+  }
 
   return (
     <Container>
