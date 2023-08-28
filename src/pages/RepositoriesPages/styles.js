@@ -20,7 +20,7 @@ export const SideBar = styled.aside`
     background: ${(props) => props.theme.colors.background};
     min-width: 20rem;
     max-height: 100vh;
-    overflow: hidden;
+    overflow: auto;
 `;
 
 export const Main = styled.section`
@@ -28,7 +28,7 @@ export const Main = styled.section`
   width: 100%;
   height: 100vh;
   padding: 40px;
-  overflow: hidden;
+  overflow: auto;
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}){
     height: 100%;
